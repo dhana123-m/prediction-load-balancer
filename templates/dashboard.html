@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SysGuard AI Dashboard</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+</head>
+
+<body>
+    <div id="loader" class="loader"></div>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2 class="logo">SysGuard AI</h2>
+
+    <a href="/dashboard">Dashboard</a>
+    <a href="/settings">Settings</a>
+    <a href="/reports">Reports</a>
+    <a href="/protection">Protection</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+
+    <!-- Top Header -->
+    <div class="topbar">
+        <p>Welcome {{ username }} ({{ role }})</p>
+        <h1>System Dashboard</h1>
+        <p>Smart Monitoring & Predictive Protection</p>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="cards">
+
+        <div class="card" id="cpu">
+            <h3>CPU</h3>
+            <p>--%</p>
+        </div>
+
+        <div class="card" id="ram">
+            <h3>RAM</h3>
+            <p>--%</p>
+        </div>
+
+        <div class="card" id="disk">
+            <h3>Disk</h3>
+            <p>--%</p>
+        </div>
+
+        <div class="card" id="network">
+            <h3>Network</h3>
+            <p>-- MB</p>
+        </div>
+
+        <div class="card" id="battery">
+            <h3>Battery</h3>
+            <p>--%</p>
+        </div>
+
+        <div class="card" id="temp">
+            <h3>Temperature</h3>
+            <p>--°C</p>
+        </div>
+
+        <div class="card" id="prediction">
+            <h3>Prediction</h3>
+            <p>--</p>
+        </div>
+
+        <div class="card" id="risk">
+            <h3>Risk Level</h3>
+            <p>--</p>
+        </div>
+
+        <div class="card wide" id="status">
+            <h3>Load Balancer</h3>
+            <p>--</p>
+        </div>
+
+        <div class="card wide" id="process">
+            <h3>Heavy Application</h3>
+            <p>--</p>
+        </div>
+
+        <div class="card wide alert-card" id="warning">
+            <h3>Warning</h3>
+            <p>None</p>
+        </div>
+        <a href="/report">Download Report</a>
+        <div id="toast" class="toast"></div>
+
+    </div>
+
+    <!-- Chart Section -->
+    <div class="chart-section">
+        <h2>Live Performance Graph</h2>
+        <canvas id="myChart"></canvas>
+    </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>

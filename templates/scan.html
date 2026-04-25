@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Scan Results</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="main">
+<h1>System Scan Complete</h1>
+
+<div class="progress"> <div class="progress-bar" id="bar"></div> </div>
+
+<div class="cards">
+
+<div class="card"><h3>CPU</h3><p>{{ cpu }}%</p></div>
+<div class="card"><h3>RAM</h3><p>{{ ram }}%</p></div>
+<div class="card"><h3>Disk</h3><p>{{ disk }}%</p></div>
+<div class="card"><h3>Battery</h3><p>{{ battery }}%</p></div>
+<div class="card"><h3>Temp</h3><p>{{ temp }}</p></div>
+<div class="card critical"><h3>Risk</h3><p>{{ risk }}</p></div>
+
+</div>
+
+<br>
+<a href="/protection" class="btn">Back to Protection</a>
+
+</div>
+
+</body>
+</html>

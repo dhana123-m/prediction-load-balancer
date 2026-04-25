@@ -1,0 +1,9 @@
+Flask
+Flask-SocketIO
+mysql-connector-python
+psutil
+scikit-learn
+numpy
+eventlet
+gunicorn
+reportlab

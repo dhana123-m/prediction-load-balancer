@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Protection</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="sidebar">
+<h2 class="logo">SysGuard AI</h2>
+
+<a href="/dashboard">Dashboard</a>
+<a href="/settings">Settings</a>
+<a href="/reports">Reports</a>
+<a href="/protection">Protection</a>
+<a href="/logout">Logout</a>
+</div>
+
+<div class="main">
+
+<h1>Protection Center</h1>
+<p>Welcome {{ username }} ({{ role }})</p>
+
+<div class="cards">
+
+<div class="card critical">
+<h3>Live Threats</h3>
+<p>{{ threat }}</p>
+</div>
+
+<div class="card">
+<h3>Cleanup System</h3>
+<a href="/cleanup-now">Run Cleanup</a>
+</div>
+
+<div class="card">
+<h3>Quick Scan</h3>
+<a href="/scan-now">Scan Now</a>
+</div>
+
+<div class="card">
+<h3>Alert History</h3>
+<p>{{ count }} Warnings Found</p>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

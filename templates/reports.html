@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Reports</title>
+<link rel="stylesheet" href="/static/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="sidebar">
+<h2 class="logo">SysGuard AI</h2>
+
+<a href="/dashboard">Dashboard</a>
+<a href="/settings">Settings</a>
+<a href="/reports">Reports</a>
+<a href="/protection">Protection</a>
+<a href="/logout">Logout</a>
+</div>
+
+<div class="main">
+
+<h1>Reports Center</h1>
+<p>Welcome {{ username }} ({{ role }})</p>
+
+<div class="cards">
+
+<div class="card">
+<h3>Download PDF Report</h3>
+<a href="/report">Download Now</a>
+</div>
+
+<div class="card">
+<h3>Monthly Trends</h3>
+<p>Peak Load: 8 PM</p>
+<p>Most Used Resource: RAM</p>
+</div>
+
+</div>
+
+<div class="chart-section">
+<h2>CPU Analytics Graph</h2>
+<canvas id="cpuChart"></canvas>
+</div>
+
+</div>
+
+<script>
+const ctx = document.getElementById('cpuChart');
+
+new Chart(ctx, {
+type:'line',
+data:{
+labels:['Week1','Week2','Week3','Week4'],
+datasets:[{
+label:'CPU Average %',
+data:[42,58,63,49],
+borderWidth:3,
+tension:0.4
+}]
+}
+});
+</script>
+
+</body>
+</html>
