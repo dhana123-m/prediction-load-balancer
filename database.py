@@ -1,16 +1,12 @@
+import os
 import mysql.connector
 
-try:
-    db = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="Admin123",
-        database="load_balancer",
+def db():
+    return mysql.connector.connect(
+        host=os.getenv("DB_HOST"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASS"),
+        database=os.getenv("DB_NAME"),
+        port=int(os.getenv("DB_PORT", 3306)),
         autocommit=True
     )
-
-    cursor = db.cursor()
-    print("MySQL Connected")
-
-except Exception as e:
-    print("Database Error:", e)
